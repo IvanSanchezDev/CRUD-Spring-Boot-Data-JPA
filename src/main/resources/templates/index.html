@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<!-- CSS -->
+	<link rel="stylesheet" href="static/styles/styles.css" th:href="@{/styles/styles.css}">
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/c5baae820f.js" crossorigin="anonymous"></script>
+	<!-- iconos -->
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+	
+
+	<div class="container   mt-5">
+
+		<div class="jumbotron jumbotron-fluid mb-5 mt-5">
+
+			<h1 class="display-4 text-center font-weight-bold ">CRUD PRESIDENTE</h1>
+
+
+		</div>
+
+
+		<div class="row d-flex justify-content-around mb-5">
+
+
+
+
+			<div class="card " style="width: 18rem;">
+				<a th:href="@{/listarPresidente}" class="btn"><i class='bx bx-user' style="font-size: 100px;"></i>
+				</a>
+				<div class="card-body">
+					<center>
+						<h3 class="card-title font-weight-bold">Presidente</h3>
+					</center>
+					<p class="card-text">VEA LA LISTA DE PRESIDENTE Y AGREGUE NUEVOS PRESIDENTES</p>
+				</div>
+			</div>
+
+			<div class="card " style="width: 18rem;">
+				<a th:href="@{/listarLeyes}" class="btn"><i class='bx bx-edit-alt' style="font-size: 100px;"></i></a>
+				<div class="card-body">
+					<h3 class="card-title font-weight-bold">Leyes</h3>
+					<p class="card-text">VEA LA LISTA DE LAS LEYES Y CREE NUEVAS LEYES</p>
+				</div>
+			</div>
+
+			<div class="card " style="width: 18rem;">
+				<a th:href="@{/listarMinistros}" class="btn"><i class='bx bx-user-circle'
+						style="font-size: 100px;"></i></a>
+				<div class="card-body">
+					<h3 class="card-title font-weight-bold">Ministros</h3>
+					<p class="card-text">VEA LA LISTA DE LOS MINISTROS Y AGREGUE UN NUEVO MINISTRO AL GABINETE
+						PRESIDENCIAL</p>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+	</div>
+
+	
+
+	
+
+
+</body>
+
+</html>

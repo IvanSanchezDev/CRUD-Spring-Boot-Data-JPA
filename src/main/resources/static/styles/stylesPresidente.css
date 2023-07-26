@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+	background: rgb(239, 247, 251);
+}
+
+.container{
+	margin-top: 80px;
+}
+
+table, th, td {
+   border: 1px solid;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  height: 80px;
+}
+
+tr:hover .text{
+	background-color: #201F4C;
+	color:white;
+}
+
+.editar{
+	background:#201F4C;
+	color:white;
+}
+
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('./../img/loading-loading-forever.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}

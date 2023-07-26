@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+		integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	
+
+<link rel="stylesheet"  href="static/styles/stylesFormularios.css" th:href="@{/styles/stylesFormularios.css}">
+
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/c5baae820f.js" crossorigin="anonymous"></script>
+	<!-- iconos -->
+
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+	<div class="container">
+		<form th:action="@{/guardarMinistro}" th:object=${ministros} method="POST" modelAttribute="ministros">
+			<div class="card">
+				<div class="card-header text-center">
+					<h1>Agregar Ministro</h1>
+				</div>
+
+				<div class="card-body">
+
+					<div class="form-row">
+						<div class="form-group col">
+						<label>Id</label>
+						<input type="text" th:field="*{id}" class="form-control">
+					</div>
+
+
+						<div class="form-group col">
+							<label>Cargo</label>
+							<input type="text" th:field="*{cargo}" class="form-control">
+							<small class="form-text text-danger" th:if="${#fields.hasErrors('cargo')}"
+								th:errors="*{cargo}"></small>
+						</div>
+					</div>
+					<div class="form-group">
+						<label>Titular</label>
+						<input type="text" th:field="*{titular}" class="form-control">
+						<small class="form-text text-danger" th:if="${#fields.hasErrors('titular')}"
+							th:errors="*{titular}"></small>
+					</div>
+
+					<div class="form-group">
+						<label>Fecha Nombramiento</label>
+						<input type="date" th:field="*{fecha_inicio}" class="form-control">
+						<small class="form-text text-danger" th:if="${#fields.hasErrors('fecha_inicio')}"
+							th:errors="*{fecha_inicio}"></small>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col">
+							<label>Partido Politico</label>
+							<input type="text" th:field="*{partido_politico}" class="form-control">
+							<small class="form-text text-danger" 
+							th:if="${#fields.hasErrors('partido_politico')}"
+								th:errors="*{partido_politico}"></small>
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4">Presidente</label> <select th:field="${ministros.presidente}" class="form-select"
+							multiple="multiple">
+
+							<option th:each="presidente :${presidente}" th:value="${presidente.id_presidente}"
+								th:text="${presidente.nombres}">
+							</option>
+						</select><br />
+						</div>
+					</div>
+				</div>
+
+				<div class="card-footer">
+					<button type="submit" value="Enviar" class="btn btn-success form-control"><i
+							class="fas fa-plus"></i>Aceptar</button>
+
+					<a th:href="@{/listarMinistros}" class="btn editar btn-block mt-3"><i
+							class='bx bx-undo'></i>Volver</a>
+				</div>
+
+
+			</div>
+
+		</form>
+	</div>
+
+
+</body>
+
+</html>
